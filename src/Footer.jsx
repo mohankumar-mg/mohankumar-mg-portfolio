@@ -58,21 +58,21 @@ function Footer() {
           <img
             src={LinkedIn}
             alt="linkedin"
-            className="h-[30px] w-[30px] mr-[18px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
+            className="h-[40px] w-[40px] mr-[20px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
           />
         </a>
         <a href="https://github.com/mohankumar-mg" target="_blank">
           <img
             src={GitHub}
             alt="github"
-            className="h-[30px] w-[30px] mr-[18px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
+            className="h-[40px] w-[40px] mr-[20px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
           />
         </a>
         <a href="https://leetcode.com/u/Mohankumar_M_G/" target="_blank">
           <img
             src={LeetCode}
             alt="leetcode"
-            className="h-[30px] w-[30px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
+            className="h-[40px] w-[40px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
           />
         </a>
       </div>

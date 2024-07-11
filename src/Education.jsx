@@ -140,7 +140,7 @@ const EducationComponent = () => {
           <div className="relative flex items-center justify-around w-full">
             {Object.keys(academicDetails).map((house) => (
               <div key={house} className="flex flex-col items-center ">
-                <label className="mb-4 font-bold">
+                <label className="mb-4 font-bold dark:text-[#dcdcdc]">
                   {academicDetails[house].label}
                 </label>
                 <div
