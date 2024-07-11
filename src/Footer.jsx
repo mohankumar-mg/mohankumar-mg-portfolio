@@ -12,12 +12,12 @@ function Footer() {
   };
 
   return (
-    <div className="w-full h-[300px] bg-gray-200 mt-10 rounded-t-xl  ">
+    <div className="w-full h-[320px] bg-gray-200 mt-10 rounded-t-xl">
       <h3 className="text-xl font-sans font-bold text-center pt-[20px] drop-shadow-2xl">
         Contact me
       </h3>
 
-      <div className="flex justify-between mt-[20px] items-center ">
+      <div className="flex justify-between mt-[20px] items-center">
         <div className="ml-[40px] custom:ml-[20px] mt-[20px] custom:w-[150px]">
           <div className="flex justify-start items-center pb-[20px]">
             <img
@@ -38,11 +38,11 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-start h-[50px] custom:h-[40px] mr-[40px] custom:mr-[20px] mt-[10px] hover:drop-shadow-2xl custom:w-[160px]">
-          <div className="flex items-center justify-center text-center bg-[#fff] w-[150px]">
+        <div className="flex justify-start h-[50px] custom:h-[40px] mr-[40px] custom:mr-[20px] mt-[10px] custom:w-[160px]">
+          <div className="flex items-center justify-center text-center bg-[#fff] w-[150px] z-10">
             <h3 className="custom:text-sm italic">Click to Text me...</h3>
           </div>
-          <a href="https://forms.gle/qhBRuvE2exKRq53Y9" target="_blank">
+          <a href="https://forms.gle/qhBRuvE2exKRq53Y9" target="_blank" className="z-10">
             <button className="flex items-center custom:text-xs text-center text-white px-4 py-2 h-[51px] custom:h-[40px] bg-green-600 rounded-r-lg hover:opacity-50">
               Go →
             </button>
@@ -54,6 +54,7 @@ function Footer() {
         <a
           href="https://www.linkedin.com/in/mohankumar-m-g-101132257/"
           target="_blank"
+          className="z-10"
         >
           <img
             src={LinkedIn}
@@ -61,14 +62,14 @@ function Footer() {
             className="h-[40px] w-[40px] mr-[20px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
           />
         </a>
-        <a href="https://github.com/mohankumar-mg" target="_blank">
+        <a href="https://github.com/mohankumar-mg" target="_blank" className="z-10">
           <img
             src={GitHub}
             alt="github"
             className="h-[40px] w-[40px] mr-[20px] hover:drop-shadow-2xl cursor-pointer shadow-lg hover:shadow-gray-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-full"
           />
         </a>
-        <a href="https://leetcode.com/u/Mohankumar_M_G/" target="_blank">
+        <a href="https://leetcode.com/u/Mohankumar_M_G/" target="_blank" className="z-10">
           <img
             src={LeetCode}
             alt="leetcode"
