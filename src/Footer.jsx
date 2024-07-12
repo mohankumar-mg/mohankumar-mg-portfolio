@@ -1,31 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TelePhone from "./assets/others/telephone.svg";
 import Email from "./assets/others/email.svg";
 import LinkedIn from "./assets/others/linked_in.svg";
 import GitHub from "./assets/others/github.svg";
 import LeetCode from "./assets/others/leetcode.svg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function Footer() {
+function Footer({ onAnimationComplete }) {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      delay: 50,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
+    const handleScroll = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Call onAnimationComplete when AOS animations are complete
+    AOS.refreshHard(); // Force refresh to ensure AOS animation complete status
+    setTimeout(onAnimationComplete, 1200); // Adjust timeout based on your animation duration
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [onAnimationComplete]);
+
   const getCurrentYear = () => {
     const date = new Date();
     return date.getFullYear();
   };
 
   return (
-    <div className="w-full h-[320px] bg-gray-200 mt-10 rounded-t-xl">
-      <h3 className="text-xl font-sans font-bold text-center pt-[20px] drop-shadow-2xl">
+    <div data-aos="fade-up" className="w-full h-[330px] bg-gray-200 mt-10 rounded-t-xl">
+      <h3 data-aos="fade-down" className="text-xl font-sans font-bold text-center pt-[20px] drop-shadow-2xl">
         Contact me
       </h3>
 
       <div className="flex justify-between mt-[20px] items-center">
-        <div className="ml-[40px] custom:ml-[20px] mt-[20px] custom:w-[150px]">
+        <div className="ml-[40px] custom:ml-[20px] mt-[20px] custom:w-[150px]" data-aos="fade-right">
           <div className="flex justify-start items-center pb-[20px]">
             <img
               src={TelePhone}
               alt="telephone"
               className="w-[20px] h-[20px] pr-[4px] mr-[6px]"
             />
-            <h3 className="font-bold custom:text-sm">1111111111</h3>
+            <h3 className="font-bold custom:text-xs">9043039475</h3>
           </div>
 
           <div className="flex justify-start items-center">
@@ -34,13 +60,13 @@ function Footer() {
               alt="email"
               className="w-[20px] h-[20px] mr-[6px]"
             />
-            <h3 className="font-bold custom:text-sm italic">mamo@gmail.com</h3>
+            <h3 className="font-bold custom:text-xs italic">mohankumargandhi09@gmail.com</h3>
           </div>
         </div>
 
-        <div className="flex justify-start h-[50px] custom:h-[40px] mr-[40px] custom:mr-[20px] mt-[10px] custom:w-[160px]">
+        <div className="flex justify-start h-[50px] custom:h-[40px] mr-[40px] custom:mr-[12px] mt-[10px] custom:w-[120px]" data-aos="fade-left">
           <div className="flex items-center justify-center text-center bg-[#fff] w-[150px] z-10">
-            <h3 className="custom:text-sm italic">Click to Text me...</h3>
+            <h3 className="custom:text-xs italic">Click to Text me...</h3>
           </div>
           <a href="https://forms.gle/qhBRuvE2exKRq53Y9" target="_blank" className="z-10">
             <button className="flex items-center custom:text-xs text-center text-white px-4 py-2 h-[51px] custom:h-[40px] bg-green-600 rounded-r-lg hover:opacity-50">
@@ -50,7 +76,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-center custom:items-end mt-[30px] custom:mt-[40px] custom:mb-[30px]">
+      <div className="flex justify-center custom:items-end mt-[30px] custom:mt-[40px] custom:mb-[30px]" >
         <a
           href="https://www.linkedin.com/in/mohankumar-m-g-101132257/"
           target="_blank"

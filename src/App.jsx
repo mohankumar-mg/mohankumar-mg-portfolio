@@ -7,6 +7,8 @@ import TechStacks from "./TechStacks";
 import Projects from "./Projects";
 import Footer from "./Footer";
 import logo from "./assets/others/logo.svg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,13 +20,22 @@ function App() {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
-  function toggleDarkMode() {
+  // Function to toggle dark mode
+  const toggleDarkMode = () => {
     const isDarkMode = !darkMode;
     setDarkMode(isDarkMode);
     document.documentElement.classList.toggle("dark", isDarkMode);
-  }
+  };
 
   useEffect(() => {
+    AOS.init({
+      offset: 200,
+      delay: 50,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
     const handleScroll = () => {
       const sections = ["about", "education", "skills", "projects", "footer"];
       const scrollPosition = window.scrollY + window.innerHeight / 1.5;
@@ -48,11 +59,17 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Function to handle the completion of AOS animations
+  const handleAOSComplete = () => {
+    // After AOS animations complete, remove any potential horizontal scrollbar
+    document.body.style.overflowX = 'hidden';
+  };
+
   return (
     <div className="dark:bg-[#0f172a] min-h-screen">
       <Navbar
         activeSection={activeSection}
-        toggleDarkMode={toggleDarkMode}
+        toggleDarkMode={toggleDarkMode} // Pass toggleDarkMode to Navbar
         darkMode={darkMode}
         refs={{ aboutRef, educationRef, skillsRef, projectsRef, contactRef }}
       />
@@ -92,7 +109,7 @@ function App() {
       </div>
 
       <div id="footer" ref={contactRef}>
-        <Footer />
+        <Footer onAnimationComplete={handleAOSComplete} />
       </div>
     </div>
   );

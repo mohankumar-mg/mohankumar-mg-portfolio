@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./assets/others/logo.svg";
 import MoonLogo from "./assets/theme/moon.svg";
 import BulbLogo from "./assets/theme/bulb.svg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Navbar({ activeSection, toggleDarkMode, darkMode, refs }) {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      delay: 50,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  }, []);
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const getLinkClass = (section) => {
@@ -29,7 +41,7 @@ function Navbar({ activeSection, toggleDarkMode, darkMode, refs }) {
   };
 
   return (
-    <div className="bg-[#2c3e50] dark:bg-[#282828] px-4 py-2 md:px-8 md:py-4 flex justify-between items-center h-[65px] fixed top-0 w-full z-50">
+    <div data-aos="fade-down" className="bg-[#2c3e50] dark:bg-[#282828] px-4 py-2 md:px-8 md:py-4 flex justify-between items-center h-[65px] fixed top-0 w-full z-50">
       <div
         className="flex items-center cursor-pointer relative"
         onClick={() => {

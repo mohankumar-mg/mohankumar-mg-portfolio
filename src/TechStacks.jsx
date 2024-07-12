@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Html from "./assets/Front_End/html.png";
 import Css from "./assets/Front_End/css.jpg";
 import Js from "./assets/Front_End/js.png";
@@ -29,18 +29,40 @@ import Python from "./assets/Programming_Langs/python.png";
 import Canva from "./assets/Designing/canva.jpeg";
 import Figma from "./assets/Designing/figma.png";
 import StarUML from "./assets/Designing/staruml.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function TechStacks() {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      delay: 50,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+    
+    const handleScroll = () => {
+      AOS.refresh();
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="max-w-screen-xl mx-auto px-4 py-10">
-      <h1 className="text-4xl custom:text-3xl font-extrabold text-center text-[#3C5B6F] dark:text-white mb-10">
+      <h1 data-aos="fade-right" className="text-4xl custom:text-3xl font-extrabold text-center text-[#3C5B6F] dark:text-white mb-10">
         Tech Stacks Known...
       </h1>
 
       {/* Frontend */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Frontend</h2>
-        <div className="grid grid-cols-2 custom:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-[50px]">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Frontend</h2>
+        <div data-aos="fade-right" className="grid grid-cols-2 custom:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-[50px]">
           <ImageCard src={Html} alt="HTML" />
           <ImageCard src={Css} alt="CSS" />
           <ImageCard src={Js} alt="JavaScript" />
@@ -56,8 +78,8 @@ function TechStacks() {
 
       {/* Backend */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Backend</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 ">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Backend</h2>
+        <div data-aos="fade-right" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 ">
           <ImageCard src={Node} alt="Node.js" />
           <ImageCard src={Express} alt="Express.js" />
           <ImageCard src={Ts} alt="TypeScript" />
@@ -67,8 +89,8 @@ function TechStacks() {
 
       {/* Database */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Database</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Database</h2>
+        <div data-aos="fade-right" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
           <ImageCard src={MongoDB} alt="MongoDB" />
           <ImageCard src={Mongoose} alt="Mongoose" />
           <ImageCard src={MySQL} alt="MySQL" />
@@ -78,20 +100,20 @@ function TechStacks() {
 
       {/* Networking & CyberSecurity */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
           Networking & CyberSecurity
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+        <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
           <ImageCard src={PacketTracer} alt="PacketTracer" />
         </div>
       </div>
 
       {/* Programming Languages */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
           Programming Languages
         </h2>
-        <div className="grid custom:grid-cols-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div data-aos="fade-right" className="grid custom:grid-cols-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
           <ImageCard src={C} alt="C" />
           <ImageCard src={Java} alt="Java" />
           <ImageCard src={Python} alt="Python" />
@@ -100,10 +122,10 @@ function TechStacks() {
 
       {/* Operating Systems */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
           Operating Systems
         </h2>
-        <div className="grid custom:grid-cols-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div data-aos="fade-right" className="grid custom:grid-cols-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
           <ImageCard src={Kali} alt="Kali Linux" />
           <ImageCard src={Ubuntu} alt="Ubuntu" />
           <ImageCard src={Windows} alt="Windows" />
@@ -112,10 +134,10 @@ function TechStacks() {
 
       {/* UI/UX & Designing Tools */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">
           UI/UX & Designing Tools
         </h2>
-        <div className="grid custom:grid-cols-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div data-aos="fade-right" className="grid custom:grid-cols-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
           <ImageCard src={Canva} alt="Canva" />
           <ImageCard src={Figma} alt="Figma" />
           <ImageCard src={StarUML} alt="StarUML" />
@@ -124,8 +146,8 @@ function TechStacks() {
 
       {/* Other Tools */}
       <div className="mb-12">
-        <h2 className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Other Tools</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <h2 data-aos="fade-left" data-aos-offset="300" className="text-2xl custom:text-2xl font-bold mb-6 text-center dark:text-[#dcdcdc]">Other Tools</h2>
+        <div data-aos="fade-right" className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
           <ImageCard src={Git} alt="Git" />
           <ImageCard src={GitHub} alt="GitHub" />
         </div>

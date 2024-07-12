@@ -33,7 +33,7 @@ const CustomSlider = () => {
     {
       img: ShoppingMall,
       imgtxt: "shopping_mall",
-      title: "Grocessary ordering Website",
+      title: "Grocery ordering Website",
       url: "https://mohankumar-mg.github.io/Shopping_Mall_Project/",
     },
   ];
@@ -41,9 +41,11 @@ const CustomSlider = () => {
   return (
     <div className="mx-[20%] h-[700px] w-[60%] custom:w-[80%] custom:mx-[10%] drop-shadow-2xl">
       <Slider {...settings}>
-        <SlidingCard img={slides[0].img} imgtxt={slides[0].imgtxt} title={slides[0].title} url={slides[0].url} />
-        <SlidingCard img={slides[1].img} imgtxt={slides[1].imgtxt} title={slides[1].title} url={slides[1].url} />
-        <SlidingCard img={slides[2].img} imgtxt={slides[2].imgtxt} title={slides[2].title} url={slides[2].url} />
+        {slides.map((slide, index) => (
+          <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+            <SlidingCard img={slide.img} imgtxt={slide.imgtxt} title={slide.title} url={slide.url} />
+          </div>
+        ))}
       </Slider>
     </div>
   );
