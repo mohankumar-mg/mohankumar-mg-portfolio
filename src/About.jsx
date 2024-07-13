@@ -55,7 +55,7 @@ function About() {
       <br />
       <div className="mt-8 flex justify-center">
         <a
-          href="https://drive.google.com/file/d/1o25e9UJEt2eSxDQdW95IJg1F928miAB8/view?usp=sharing"
+          href="https://drive.google.com/file/d/1eVO-dmYZUYX8caub7wKnlWjqfTCbiGeJ/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
